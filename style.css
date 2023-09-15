@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #1C235E;
+    --secondary-color: #ED4B4B;
+    --secondary-color-80: hsla(0, 82%, 61%, 0.7);
+    --white-color: #ECECEC;
+
+    --black: #252525;
+    --black-40: rgba(0, 0, 0, 0.4);
+
+}
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--white-color);
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: auto;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+ul{
+    list-style-type: none;
+    font-size: var(--h3);
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+h1{
+    font-size: 32px;
+}
+h2{
+    font-size: 24px;
+}
+h3{
+    font-size: 18px;
+}
+
+.container{
+    max-width: 768px;
+    margin: auto;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+
+
+/* header */
+header{
+    background-color: var(--primary-color);
+    height: 64px;
+}
+nav{
+    height: 100%;
+}
+.nav-mobile{
+    display: none;
+}
+
+.nav-list{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-evenly;
+}
+
+.nav-list li{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+
+.nav-list li:hover{
+    background-color: var(--secondary-color);
+}
+.nav-list li:nth-child(1):hover{
+    background-color: var(--primary-color);
+}
+.nav-list li img{
+    width: 100px;
+}
+
+/* footer */
+footer{
+    margin-top: auto;
+    width: 100%;
+    height: 48px;
+    background-color: var(--primary-color);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* main */
+
+main{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* home */
+.bg-image{
+    background-image: url(./assets/bg-image.jpg);
+    background-size:cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.bg-b{
+    background-color: var(--black-40);
+    width: 100%;
+}
+
+.home .bg-black{
+    margin-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home .bg-black .logo-tipo{
+    margin: 32px;
+    width: 300px;
+}
+
+.home h3{
+    margin-bottom: 4px;
+}
+.home h1{
+    margin-bottom: 16px;
+}
+.home .bg-black ul {
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+.home .bg-black ul li img{
+    width: 32px;
+}
+
+/* blog-js */
+
+.blog-js{
+    width: 100%;
+    flex-direction: column;
+}
+.blog-js .titles div{
+    margin-top: 16px;
+}
+.blog-js .titles{
+    text-align: center;
+}
+.blog-js .titles h2{
+    padding-top: 16px;
+}
+.blog-js .titles .container p{
+    font-size: 14px;
+    padding-bottom: 16px;
+}
+
+
+.blog-js .new-articles,
+.blog-js .trend-articles{
+    margin-top: 16px;
+}
+.blog-js .new-articles h3,
+.blog-js .trend-articles h3{
+    background-color: var(--secondary-color-80);
+    text-align: center;
+    padding: 8px 0px ;
+    border-radius: 5px;
+}
+.blog-js .new-articles p,
+.blog-js .trend-articles p{
+    margin: 8px 64px;
+}
+.blog-js .new-articles .last-p,
+.blog-js .trend-articles .last-p{
+    padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    
+    header{
+        order: 3;
+    }
+    header nav .nav-list {
+        display: none;
+    }
+    main{
+        order: 2;
+    }
+    footer{
+        order: 1;
+    }
+    
+
+    .nav-mobile{
+        margin-left: 16px;
+        margin-right: 16px;
+        height: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-mobile .cont-logo{
+        width: 50px;
+        height: auto;
+    }
+    .nav-mobile .cont-menu{
+        width: 40px;
+        height: auto;
+    }
+    .home .bg-black .logo-tipo{
+        width: 200px;
+        margin: 0px auto;
+    }
+    .home h1{
+        margin-top: 16px;
+        text-align: center;
+        font-size: 24px;
+    }
+    .home .bg-black ul{
+        margin-top: 16px;
+    }
+
+    /* menu */
+    .home{
+        position: relative;
+    }
+    
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-mobile{
+        height: calc(100vh - 112px);
+        position: fixed;
+        z-index: 100;
+        flex-grow: 1;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+    }
+    .menu-mobile ul{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-mobile ul li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+    }
+    
+    .menu-mobile ul li:hover{
+        background-color: var(--secondary-color);
+    }
+    
+}
+@media (min-width: 769px) {
+    .menu-mobile{
+        display: none;
+    }
+}
